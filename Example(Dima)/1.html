@@ -4,7 +4,7 @@
 <body>
     <header>
     <div class="logo">
-        <a href="#"><img src="img/smile.svg" alt="smile" title="yellow-smile" ></a>
+        <a ><img src="img/smile.svg" alt="smile" title="yellow-smile" ></a>
     </div>
     <ul class="header">
         <li data-active="about-us"><a href="#">О нас</a></li>
@@ -28,19 +28,19 @@
                 <h2>Lorem ipsum</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis.</p>
             </div>
-            <a class="button-frst">Получить консультацию</a>
+            <a class="button-frst" data-popup="m1">Получить консультацию</a>
             
         </div>
     </div>
 </section>
 <section class="about-us">
-    <a class="button-scnd" href="">О нас</a>
+    <a class="button-scnd" data-popup="m2">О нас</a>
     <div class="about-us-inner">
         <div class="about-us-inner-wrap">
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta consequatur aliquid ducimus, repellendus harum enim cum impedit soluta earum eligendi a perspiciatis voluptate, voluptatibus sint accusantium sapiente vitae! Debitis ratione quis hic tenetur amet voluptatem, modi iure sequi eos odio harum, iusto sit quas, cupiditate veniam dolorum! Fugiat doloremque minus, vero dignissimos perferendis vel placeat distinctio nulla nostrum! Est, velit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro delectus suscipit ratione perferendis ipsam officia veniam ullam sunt, recusandae molestiae, quas modi minima, nemo, doloribus deleniti dolorem et obcaecati excepturi.</p>
         </div>
         <div class="about-us-inner-wrap-img">
-            <a class="popup-video" href="">
+            <a class="popup-video" >
                 <img src="http://mirpozitiva.ru/uploads/posts/2016-08/1472042492_01.jpg" alt="frst" title="frst-section">
             </a>
         </div>
@@ -51,19 +51,19 @@
 </footer>
 
 
-<section class="popup frst-popup">
+<section class="popup frst-popup" data-modal="m1">
     <div class="popup-overlay">
         <div class="popup-form">
             <div class="popup-head">
                 <h3>Связаться с нами</h3>
-                <span>&times;</span>
+                <span data-modal="m1">&times;</span>
             </div>
             <form action="">
                 <label for="name">Имя</label>
                 <input type="text" id=name placeholder="Ваше имя">
                 <label for="phone">Телефон</label>
                 <input type="text" id="phone" placeholder="Ваш телефон">
-                <button class="button-frst" type=submit>Отправить</button>
+                <button class="button-frst" type=submit data-modal="m1">Отправить</button>
             </form>
         </div>
     </div>
@@ -71,11 +71,11 @@
 
 
 
-<section class="popup scnd-popup">
+<section class="popup scnd-popup" data-modal="m2">
     <div class="popup-overlay">
         <div class="popup-form">
             <div class="popup-head">
-                <span>&times;</span>
+                <span data-modal="m2">&times;</span>
             </div>
             <iframe width="560" height="315" src="https://www.youtube.com/embed/nTDD_LLhezw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>

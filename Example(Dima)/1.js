@@ -6,9 +6,6 @@ function Modal() {
       this.m.set(item.dataset.popup, document.querySelector(`[data-modal~="${item.dataset.popup}"]`))
     }
   })
-  // this.modal = document.querySelector('.popup');
-  // this.btn1 = document.querySelector('.button-frst');
-  // this.btnOfpopup = document.querySelector('form .button-frst')
   self = this
 
   this.popup = function(e) {

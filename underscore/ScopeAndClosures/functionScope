@@ -1,0 +1,23 @@
+const _ = require('underscore')
+function strangerIdentity(n) {
+  for (this.i = 0; this.i < n; this.i++) ;
+  return this.i;
+}
+
+console.log(strangerIdentity(5))
+console.log(strangerIdentity.call({},1000))
+console.log (i)
+console.log(strangerIdentity.call(null,500))
+console.log (i)
+console.log(strangerIdentity.call(global,100))
+console.log (i)
+
+
+function f () {
+ this.a = 200;
+  return this.a + this.b;
+}
+var globals = {'b': 2};
+console.log(f.bind(globals)())
+console.log(globals)
+

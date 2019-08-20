@@ -22,3 +22,6 @@ function averageInit(value1){
 }
 avResult = averageInit(n=>n*n)
 console.log(avResult(4))
+
+console.log(Math.max(...[1,2,3,5]))
+console.log(Math.max.apply(null,[1,2,3,4,5]))

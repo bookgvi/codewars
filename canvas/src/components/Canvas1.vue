@@ -40,7 +40,7 @@ export default {
       ctx.clearRect(0, 0, canvas.width, canvas.height)
       ctx.beginPath()
       ctx.arc(x, y, radius, 0, Math.PI*2)
-      ctx.style = '#0095dd'
+      ctx.fillStyle = '#0095dd'
       ctx.fill()
       ctx.closePath()
     }

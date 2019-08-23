@@ -1,14 +1,9 @@
 console.log('1')
-new Promise(resolve => {
+let prom = new Promise(resolve => {
   setTimeout(() => {
-    console.log('2')
+    console.log('Inside promise')
+    resolve()
   },0)
-  resolve('done')
 })
-console.time('q')
-for (let i=0; i<300000000; i++) {
-  c= i / i
-}
-console.timeEnd('q')
-
-  console.log('3')
+  .then(() => console.log('3'))
+console.log('2')

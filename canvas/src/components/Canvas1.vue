@@ -40,7 +40,15 @@ export default {
         this.paddle(canvas, ctx, paddleX, paddleWidth, paddleHeight)
         ballX += dx
         ballY += dy
-        if(ballY >= canvas.height - radius || ballY <= 0 + radius) {
+        if (ballY >= canvas.height - radius - paddleHeight / 2) {
+          if (ballX > paddleX && ballX < paddleX + paddleWidth) {
+            dy = -dy
+          } else {
+            document.location.reload()
+            alert('Game over...')
+          }
+        }
+        if(ballY <= 0 + radius) {
           dy = -dy
         }
         if(ballX >= canvas.width - radius || ballX <= 0 + radius) {

@@ -34,10 +34,13 @@ export default {
       let radius = 10
       let paddleHeight = 10, paddleWidth = 75
       let paddleX = (canvas.width - paddleWidth) / 2
+      let breaksWidth = 75, breaksHeight = 10, breaksPaddingX = 10, breaksPaddibgY = 10
+      let breaks, breaksCol = 5, breaksRow = 3
 
       this.intId = setInterval(()=>{
         this.ball(canvas, ctx, ballX, ballY, radius)
         this.paddle(canvas, ctx, paddleX, paddleWidth, paddleHeight)
+        this.breaks(canvas, ctx, breaksCol, breaksRow, breaks, breaksWidth, breaksHeight)
         ballX += dx
         ballY += dy
         if (ballY >= canvas.height - radius - paddleHeight / 2) {
@@ -84,6 +87,19 @@ export default {
       ctx.fillStyle = '#0095dd'
       ctx.fill()
       ctx.closePath()
+    },
+    breaks(canvas, ctx, breaksCol, breaksRow, breaks, breaksWidth, breaksHeight) {
+      for(let c=0; c<breaksCol; c++) {
+        for (let r=0; r<breaksRow; r++) {
+          breaks[c][r] = {x:0, y:0}
+          let b = breaks[c][r]
+          ctx.beginPath()
+          ctx.rect(b.x, b.y, breaksWidth, breaksHeight)
+          ctx.fillStyle = '#0095dd'
+          ctx.fill()
+          ctx.closePath()
+        }
+      }
     },
     hKeyUp (e) {
       if (e.key == 'ArrowLeft' || e.key == 'Left' || e.code == 'KeyA') {

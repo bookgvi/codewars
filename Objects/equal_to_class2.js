@@ -1,9 +1,9 @@
-User = (() => {
+User = (function () {
   function userIn (a) {
     this.a = a
   }
   Object.defineProperty(userIn.prototype, 'aa', {
-    get: function () { return this.a }
+    get: function () { return this.a + 1 },
   })
   return userIn
 })()

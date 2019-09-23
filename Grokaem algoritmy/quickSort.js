@@ -1,12 +1,15 @@
-function summ(arr, i, sum) {
-  if (i > arr.length) {
-    return sum
+function quickSort (i) {
+  if (arr.length < 2) {
+    return
   }
-  console.log(sum)
-  sum += arr[i]
-  summ(arr, i + 1, sum)
+  if (arr[0] <= arr[i]) {
+    arr1.push(arr.splice(i, 1).pop())
+  } else {
+    arr2.push(arr.splice(i, 1).pop())
+  }
+  quickSort(i)
 }
-
-arr = [1, 2, 3]
-const sum = summ(arr, 0, 0)
-console.log(sum)
+const arr = [2, 1, 3, 2, 4, 5]
+let arr1 = arr2 = []
+quickSort(1)
+console.log(arr1, arr, arr2)

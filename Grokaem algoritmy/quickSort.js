@@ -2,12 +2,37 @@ function quickSort(arr) {
   if(arr.length < 2) {
     return arr
   }
-  const pivot = arr[Math.floor(arr.length / 2)]
+  const pivot = arr[Math.floor(Math.random() * (arr.length - 1))]
   const less = arr.filter(item => item < pivot)
   const greater = arr.filter(item => item > pivot)
   return quickSort(less) + ',' + [pivot] + ',' + quickSort(greater)
 }
 
-let arr = [16, 25, 3, 4, 5, 6, 16, 0, 100, 1]
-arr = quickSort(arr)
-console.log(arr.split(',').filter(item => item))
+const arr = [1, 2, 3, 4, 55, 33, 23, 555]
+function bubleSort(arr) {
+  let sortArr
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr.length; j++) {
+      if (arr[i] <= arr[j]) {
+        sortArr  = arr[i]
+        arr[i] = arr[j]
+        arr[j] = sortArr
+      }
+    }
+  }
+  return arr
+}
+
+
+function execTime(sortAlgo) {
+  let arr = []
+  for (let i = 1; i < 100000; i++) {
+    arr.push(Math.floor(Math.random() * 1000))
+  }
+  console.time('start')
+  arr = sortAlgo(arr)
+  console.timeEnd('start')
+}
+
+execTime(quickSort)
+execTime(bubleSort)

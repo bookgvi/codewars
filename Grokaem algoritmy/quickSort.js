@@ -8,7 +8,6 @@ function quickSort(arr) {
   return quickSort(less) + ',' + [pivot] + ',' + quickSort(greater)
 }
 
-const arr = [1, 2, 3, 4, 55, 33, 23, 555]
 function bubleSort(arr) {
   let sortArr
   for (let i = 0; i < arr.length; i++) {
@@ -26,7 +25,7 @@ function bubleSort(arr) {
 
 function execTime(sortAlgo) {
   let arr = []
-  for (let i = 1; i < 100000; i++) {
+  for (let i = 1; i < 10000000; i++) {
     arr.push(Math.floor(Math.random() * 1000))
   }
   console.time('start')

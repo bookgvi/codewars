@@ -1,16 +1,15 @@
-function summ(arr, i, sum) {
-  if (i > arr.length) {
-    return sum
+function quickSort(arr) {
+  if(arr.length < 2) {
+    return arr
   }
-  console.log(sum)
-  sum += arr[i]
-  summ(arr, i + 1, sum)
+  const pivot = arr[0]
+  const less = arr.filter(item => item < pivot)
+  const greater = arr.filter(item => item > pivot)
+  const pivotArr = []
+  return quickSort(less) + ',' + pivot + ',' + quickSort(greater)
 }
-const arr = [2, 1, 3, 2, 4, 5]
-let arr1 = arr2 = []
-quickSort(1)
-console.log(arr1, arr, arr2)
 
-arr = [1, 2, 3]
-const sum = summ(arr, 0, 0)
-console.log(sum)
+const arr = [16, 25, 3, 4, 5, 6, 16]
+const arr1 = [2, 4, 6, 8]
+console.log(arr + ',' + arr1)
+console.log(quickSort(arr1))

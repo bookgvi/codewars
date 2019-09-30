@@ -27,13 +27,14 @@
 //     }
 // }
 //   }
+const f = {}
+const b = { 5: f }
+const a = { 1: f, 3: b }
 
-const b = { f: 5 }
-const a = { f: 1, [b]: 3 }
+const s = { 6: a, 2: b }
 
-data = {
-  s: { [a]: 6, [b]: 2 }
+for(let key in s) {
+  console.log(key, s[key])
 }
-
-console.log(data)
+// console.log(data)
 // graph.forEach((item, index) => index.forEach(item1 => console.log(item, index)))

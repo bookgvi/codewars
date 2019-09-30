@@ -15,32 +15,25 @@
 // const bf = b.get(f)
 // const af = a.get(f)
 //
-// grpahWeight = graph => {
-//   if(!graph) { return graph}
-//   for (key in graph) {
-//     return grpahWeight(key)
-//   }
+// data = {
+//   s: {
+//     a: {
+//       b: {
+//         f: {}
+//       }
+//     },
+//     b: {
+//       f: {}
+//     }
 // }
-//
-const s = {
-  a: 6,
-  b: 2
-}
-const a = {
-  f: 1
-}
-const b = {
-  a: 3,
-  f: 5
+//   }
+
+const b = { f: 5 }
+const a = { f: 1, [b]: 3 }
+
+data = {
+  s: { [a]: 6, [b]: 2 }
 }
 
-function graph (gr) {
-  for (key in gr) {
-    if (!key) {
-      return graph(key)
-    }
-    console.log(gr[key], graph(key))
-  }
-}
-
-console.log(graph(s))
+console.log(data)
+// graph.forEach((item, index) => index.forEach(item1 => console.log(item, index)))

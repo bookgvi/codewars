@@ -25,7 +25,7 @@ function bubleSort(arr) {
 
 function execTime(sortAlgo) {
   let arr = []
-  for (let i = 1; i < 10000000; i++) {
+  for (let i = 1; i < 10000; i++) {
     arr.push(Math.floor(Math.random() * 1000))
   }
   console.time('start')
@@ -35,3 +35,9 @@ function execTime(sortAlgo) {
 
 execTime(quickSort)
 execTime(bubleSort)
+
+let arr = []
+for (let i = 1; i < 100; i++) {
+  arr.push(Math.floor(Math.random() * 1000))
+}
+console.log(quickSort(arr).split(',').filter(item => item > 0))

@@ -1,11 +1,11 @@
-function quickSort(arr) {
+function sortAlgos(arr) {
   if(arr.length < 2) {
     return arr
   }
   const pivot = arr[Math.floor(Math.random() * (arr.length - 1))]
   const less = arr.filter(item => item < pivot)
   const greater = arr.filter(item => item > pivot)
-  return quickSort(less) + ',' + [pivot] + ',' + quickSort(greater)
+  return sortAlgos(less) + ',' + [pivot] + ',' + sortAlgos(greater)
 }
 
 function bubleSort(arr) {
@@ -33,11 +33,11 @@ function execTime(sortAlgo) {
   console.timeEnd('start')
 }
 
-execTime(quickSort)
+execTime(sortAlgos)
 execTime(bubleSort)
 
 let arr = []
 for (let i = 1; i < 100; i++) {
   arr.push(Math.floor(Math.random() * 1000))
 }
-console.log(quickSort(arr).split(',').filter(item => item > 0))
+console.log(sortAlgos(arr).split(',').filter(item => item > 0))

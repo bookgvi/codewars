@@ -1,12 +1,11 @@
 const arr = []
 
-function create2dArray(arr, size) {
+function create2dArray(arr, rowSize, colSize) {
   let row = 0
   let col = 0
-  const length = size
-  while (row <= length) {
+  while (row <= rowSize - 1) {
     arr[row] = []
-    while(col <= length) {
+    while(col <= colSize - 1) {
       arr[row][col] = 0
       col++
     }
@@ -48,5 +47,5 @@ function neighborsIn2dArray(arr) {
   return neighbors
 }
 
-console.log('\n Create empty array: \n', create2dArray(arr, 5))
+console.log('\n Create empty array: \n', create2dArray(arr, 10, 10))
 console.log('\n Number of neighbors: \n', neighborsIn2dArray(arr))

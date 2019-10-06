@@ -47,5 +47,14 @@ function neighborsIn2dArray(arr) {
   return neighbors
 }
 
+function arrDimmension(arr, i = 0) {
+  if (Array.isArray(arr)) {
+    return arrDimmension(arr.pop(), i + 1)
+  }
+  return i
+}
+
 console.log('\n Create empty array: \n', create2dArray(arr, 10, 10))
 console.log('\n Number of neighbors: \n', neighborsIn2dArray(arr))
+
+console.log(arrDimmension(arr))

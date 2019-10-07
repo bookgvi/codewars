@@ -24,10 +24,10 @@ function bubleSort(arr) {
 
 function insertionSort(arr) {
   let key = undefined
-  for (let j = 0; j < arr.length; j++) {
+  for (let j = 1; j < arr.length; j++) {
     key = arr[j]
     i = j - 1
-    while (i > 0 && arr[i] > key) {
+    while (i >= 0 && arr[i] > key) {
       arr[i + 1] = arr[i]
       arr[i] = key
       i--
@@ -45,10 +45,10 @@ function execTime(sortAlgo, label) {
   console.time(label)
   arr = sortAlgo(arr)
   console.timeEnd(label)
+  return arr
 }
 
 console.log('Array length = ', length)
 execTime(sortAlgos,'Quick sort')
 execTime(bubleSort, 'Bubble sort')
 execTime(insertionSort, 'Insertion sort')
-

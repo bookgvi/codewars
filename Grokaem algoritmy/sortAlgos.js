@@ -22,22 +22,32 @@ function bubleSort(arr) {
   return arr
 }
 
+function insertionSort(arr) {
+  let key = undefined
+  for (let j = 0; j < arr.length; j++) {
+    key = arr[j]
+    i = j - 1
+    while (i > 0 && arr[i] > key) {
+      arr[i + 1] = arr[i]
+      arr[i] = key
+      i--
+    }
+  }
+}
 
-function execTime(sortAlgo) {
+const length = 10000
+function execTime(sortAlgo, label) {
   let arr = []
-  for (let i = 1; i < 10000; i++) {
+  for (let i = 1; i < length; i++) {
     arr.push(Math.floor(Math.random() * 1000))
   }
-  console.time('start')
+  console.time(label)
   arr = sortAlgo(arr)
-  console.timeEnd('start')
+  console.timeEnd(label)
 }
 
-execTime(sortAlgos)
-execTime(bubleSort)
+console.log('Array length = ', length)
+execTime(sortAlgos,'Quick sort')
+execTime(bubleSort, 'Bubble sort')
+execTime(insertionSort, 'Insertion sort')
 
-let arr = []
-for (let i = 1; i < 100; i++) {
-  arr.push(Math.floor(Math.random() * 1000))
-}
-console.log(sortAlgos(arr).split(',').filter(item => item > 0))

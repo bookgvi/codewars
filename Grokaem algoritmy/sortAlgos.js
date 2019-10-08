@@ -32,9 +32,9 @@ function insertionSort(arr) {
     i = j - 1
     while (i >= 0 && arr[i] > key) {
       arr[i + 1] = arr[i]
-      arr[i] = key
       i--
     }
+    arr[i + 1] = key
   }
   return arr
 }

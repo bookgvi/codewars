@@ -1,4 +1,4 @@
-function sortAlgos(arr) {
+function sortAlgos (arr) {
   if(arr.length < 2) {
     return arr
   }
@@ -8,7 +8,7 @@ function sortAlgos(arr) {
   return sortAlgos(less) + ',' + [pivot] + ',' + sortAlgos(greater)
 }
 
-function bubleSort(arr) {
+function bubleSort (arr) {
   let i = arr.length - 1
   while(i >= 0) {
     let j = 0
@@ -25,7 +25,7 @@ function bubleSort(arr) {
   return arr
 }
 
-function insertionSort(arr) {
+function insertionSort (arr) {
   let key = undefined
   for (let j = 1; j < arr.length; j++) {
     key = arr[j]
@@ -39,7 +39,22 @@ function insertionSort(arr) {
   return arr
 }
 
-const length = 5000
+function selectionSort (arr) {
+  let j = 0
+  while(j <= arr.length - 1) {
+    for (let i = arr.length - 1; i > j; i--) {
+      if (arr[i] <= arr[i - 1]) {
+        arr[i] = arr[i] + arr[i - 1]
+        arr[i - 1] = arr[i] - arr[i - 1]
+        arr[i] = arr[i] - arr[i - 1]
+      }
+    }
+    j++
+  }
+  return arr
+}
+
+const length = 100
 function execTime(sortAlgo, label) {
   let arr = []
   for (let i = 1; i < length; i++) {
@@ -54,4 +69,5 @@ function execTime(sortAlgo, label) {
 console.log('Array length = ', length)
 execTime(sortAlgos,'Quick sort')
 execTime(insertionSort, 'Insertion sort')
+execTime(selectionSort, 'Selection sort')
 execTime(bubleSort, 'Bubble sort')

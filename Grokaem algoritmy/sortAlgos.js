@@ -1,4 +1,4 @@
-function sortAlgos (arr) {
+function quickSort (arr) {
   if(arr.length < 2) {
     return arr
   }
@@ -67,7 +67,7 @@ function execTime(sortAlgo, label) {
 }
 
 console.log('Array length = ', length)
-execTime(sortAlgos,'Quick sort')
+execTime(quickSort,'Quick sort')
 execTime(insertionSort, 'Insertion sort')
 execTime(selectionSort, 'Selection sort')
 execTime(bubbleSort, 'Bubble sort')

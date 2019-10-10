@@ -39,7 +39,7 @@ function insertionSort(arr) {
   return arr
 }
 
-const length = 50000
+const length = 5000
 function execTime(sortAlgo, label) {
   let arr = []
   for (let i = 1; i < length; i++) {

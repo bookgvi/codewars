@@ -5,7 +5,7 @@ function quickSort (arr) {
   const pivot = arr[Math.floor(Math.random() * (arr.length - 1))]
   const less = arr.filter(item => item < pivot)
   const greater = arr.filter(item => item > pivot)
-  return sortAlgos(less) + ',' + [pivot] + ',' + sortAlgos(greater)
+  return quickSort(less) + ',' + [pivot] + ',' + quickSort(greater)
 }
 
 function bubbleSort (arr) {

@@ -54,7 +54,7 @@ function selectionSort (arr) {
   return arr
 }
 
-const length = 25000
+const length = 50000
 function execTime(sortAlgo, label) {
   let arr = []
   for (let i = 1; i < length; i++) {

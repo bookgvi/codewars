@@ -8,4 +8,4 @@ xhr.onload = () => {
   } else {
     console.log(xhr.response)
   }
-})
+}

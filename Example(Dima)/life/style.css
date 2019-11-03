@@ -1,0 +1,18 @@
+.wrap{
+  height: 300px;
+  width: 300px;
+  border: 1px solid black;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  margin-left: 13px;
+  overflow-x: hidden
+
+}
+div{
+  height: 10px;
+  width: 10px;
+}
+button {
+  display: block
+}

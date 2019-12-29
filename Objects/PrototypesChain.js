@@ -16,6 +16,7 @@ const FirstName = function (firstName) {
   this.firstName = firstName
 }
 
+// Наследование
 FirstName.prototype = Object.create(LastName.prototype)
 
 FirstName.prototype.getFirstName = function () {
@@ -33,12 +34,12 @@ function FullName (firstName, lastName) {
   LastName.call(this, lastName)
   FirstName.call(this, firstName)
 }
+// Наследование
 FullName.prototype = Object.create(FirstName.prototype)
 
 FullName.prototype.getFullName = function () {
   return `${this.firstName} ${this.lastName}`
 }
-
 Object.defineProperty(FullName.prototype, 'constructor', {
   value: FullName,
   enumerable: false
@@ -48,6 +49,6 @@ Object.defineProperty(FullName.prototype, 'constructor', {
 * Inheritance
 * */
 const vasya = new FullName('Вася', 'Васильев')
-console.dir(vasya.getFirstName)
-console.dir(vasya.getLastName)
-console.dir(vasya.getFullName)
+console.log(vasya.getFirstName())
+console.log(vasya.getLastName())
+console.log(vasya.getFullName())

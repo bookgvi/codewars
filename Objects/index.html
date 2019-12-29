@@ -5,6 +5,19 @@
     <title>Title</title>
 </head>
 <body>
-<script src="PrototypesChain.js"></script>
+<script>
+    function loadScript (src, callback) {
+      const doc = document
+      const script = doc.createElement('script')
+      script.src = src
+      script.addEventListener('load', () => {
+        callback()
+      })
+      doc.getElementsByTagName('head')[0].appendChild(script)
+    }
+    loadScript('PrototypesChain.js', _ => {
+      console.log('QQQ')
+    })
+</script>
 </body>
 </html>

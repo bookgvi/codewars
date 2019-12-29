@@ -21,8 +21,8 @@ FirstName.prototype = Object.create(LastName.prototype)
 FirstName.prototype.getFirstName = function () {
   return this.firstName
 }
-Object.defineProperty(FirstName, 'constructor', {
-  value: LastName,
+Object.defineProperty(FirstName.prototype, 'constructor', {
+  value: FirstName,
   enumerable: false
 })
 

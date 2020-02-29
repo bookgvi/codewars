@@ -1,25 +1,17 @@
-function iterate (arr, handler, cb) {
+export function iterate (arr, handler, cb) {
   const arrTmp = arr.concat();
 
-  setTimeout(function () {
-    const item = arrTmp.shift();
-    handler(item);
+  setTimeout(function tm() {
+    const start = + new Date();
+
+    do {
+      const item = arrTmp.shift();
+      handler(item);
+    } while (arrTmp.length > 0 && new Date() - start < 50);
     if (arrTmp.length > 0) {
-      setTimeout(arguments.callee, 25);
+      setTimeout(tm, 25);
     } else {
       cb();
     }
   }, 25);
 }
-
-function showArrItem (item) {
-  console.log(item);
-}
-
-function finish () {
-  console.log('Finita....');
-}
-
-const arr = [1, 2, 3, 4, 5, 6];
-
-iterate(arr, showArrItem, finish);

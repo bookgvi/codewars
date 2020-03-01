@@ -39,7 +39,10 @@ export const UtilsLiteral = {
     span.textContent = `${item} `;
     this.fragment.appendChild(span);
   },
-  appendDomElToBody () {
+  appendDomElToBody (timerStart) {
     document.body.appendChild(this.fragment);
+    if (timerStart) {
+      console.log(`Отрисовка содержимого массива завершена... ETA = ${((new Date() - timerStart) / 1000).toFixed(2)}сек`);
+    }
   }
 };

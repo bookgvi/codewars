@@ -16,6 +16,7 @@ export function inserrtSort (arr) {
 }
 
 export function insertSortAsync (arr, cb) {
+  const timeOutDelay = 5;
   const start = +new Date();
   const tmpArr = arr.concat();
   const resArr = [];
@@ -23,19 +24,16 @@ export function insertSortAsync (arr, cb) {
   setTimeout(function item () {
     if (tmpArr.length > 0) {
       insertItem(tmpArr.shift(), resArr);
-      setTimeout(item, 25);
+      setTimeout(item, timeOutDelay);
     } else {
-      // resArr.forEach(item => { console.log(item + ' ')});
       cb(resArr);
-      console.log(`Сортировка завершена.... ETA =  ${((new Date() - start) / 1000).toFixed(2)}сек`);
+      console.log(`Сортировка завершена... ETA = ${((new Date() - start) / 1000).toFixed(2)}сек`);
     }
-  }, 25);
+  }, timeOutDelay);
 }
 
 function insertItem (item, resArr) {
   let i = resArr.length;
-  while (i >= 0) {
-    if (resArr[--i] < item) break;
-  }
+  while (i >= 0 && resArr[--i] > item);
   return resArr.splice(++i, 0, item);
 }

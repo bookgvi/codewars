@@ -16,6 +16,7 @@ export function inserrtSort (arr) {
 }
 
 export function insertSortAsync (arr, cb) {
+  const start = +new Date();
   const tmpArr = arr.concat();
   const resArr = [];
   resArr.push(tmpArr.shift()); // Начинаем со второго элемента массива
@@ -26,6 +27,7 @@ export function insertSortAsync (arr, cb) {
     } else {
       // resArr.forEach(item => { console.log(item + ' ')});
       cb(resArr);
+      console.log(`Сортировка завершена.... ETA =  ${((new Date() - start) / 1000).toFixed(2)}сек`);
     }
   }, 25);
 }

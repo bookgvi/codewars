@@ -11,13 +11,13 @@ Object.defineProperties(Utils.prototype, {
   }
 });
 
-Utils.prototype.handler = function (item) {
+Utils.prototype.createDomEl = function (item) {
   const span = document.createElement('span');
   span.textContent = `${item} `;
   this.fragment.appendChild(span);
 }
 
-Utils.prototype.cb = function () {
+Utils.prototype.appendDomElToBody = function () {
   document.body.appendChild(this.fragment);
 }
 
@@ -31,15 +31,15 @@ export const UtilsLiteral = {
   fragment: document.createDocumentFragment(),
 
   get arr () {
-    return Array.apply(UtilsLiteral, { length: this.SIZE }).map(() => (Math.random() * this.SIZE + 1).toFixed(0))
+    return Array.apply(UtilsLiteral, { length: this.SIZE }).map(() => +(Math.random() * this.SIZE + 1).toFixed(0))
   },
 
-  handler (item) {
+  createDomEl (item) {
     const span = document.createElement('span');
     span.textContent = `${item} `;
     this.fragment.appendChild(span);
   },
-  cb () {
+  appendDomElToBody () {
     document.body.appendChild(this.fragment);
   }
 };

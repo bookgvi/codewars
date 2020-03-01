@@ -1,5 +1,19 @@
 import { iterate } from './iterate.js';
-import { utils, UtilsLiteral } from './utils.js';
+import { utils, UtilsLiteral as UL } from './utils.js';
+import { inserrtSort, insertSortAsync } from './insertSort.js';
 
-iterate(utils.arr, utils.handler.bind(utils), utils.cb.bind(utils));
-iterate(UtilsLiteral.arr, UtilsLiteral.handler.bind(UtilsLiteral), UtilsLiteral.cb.bind(UtilsLiteral));
+UL.SIZE = 500
+let arr = [];
+
+const proxy = new Proxy(insertSortAsync, {
+  apply (target, ...params) {
+    return Reflect.apply(target, ...params);
+  }
+});
+
+insertSortAsync(
+  UL.arr,
+  function (arr) {
+    iterate(arr, UL.createDomEl.bind(UL), UL.appendDomElToBody.bind(UL));
+  }
+)

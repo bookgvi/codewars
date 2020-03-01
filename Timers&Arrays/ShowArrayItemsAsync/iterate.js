@@ -1,6 +1,6 @@
-function iterate (arr, handler, cb) {
+export function iterate (arr, handler, cb) {
   const tmpArr = arr.concat();
-  setTimeout(function item() {
+  setTimeout(function item () {
     const start = +new Date();
     while (tmpArr.length > 0 && (new Date() - start) < 50) {
       handler(tmpArr.shift());
@@ -8,7 +8,8 @@ function iterate (arr, handler, cb) {
     if (tmpArr.length > 0) {
       setTimeout(item, 25);
     } else {
-      cb() || null;
+      cb();
     }
   }, 25);
 }
+

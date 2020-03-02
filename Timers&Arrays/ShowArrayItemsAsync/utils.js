@@ -6,7 +6,7 @@ function Utils () {
 Object.defineProperties(Utils.prototype, {
   arr: {
     get () {
-      return Array.apply(Utils, { length: this.SIZE }).map(() => (Math.random() * this.SIZE + 1).toFixed(0));
+      return Array.apply(Utils, { length: this.SIZE }).map(() => (Math.random() * this.SIZE).toFixed(0));
     }
   }
 });
@@ -31,7 +31,7 @@ export const UtilsLiteral = {
   fragment: document.createDocumentFragment(),
 
   get arr () {
-    return Array.apply(UtilsLiteral, { length: this.SIZE }).map(() => +(Math.random() * this.SIZE + 1).toFixed(0))
+    return Array.apply(UtilsLiteral, { length: this.SIZE }).map(() => +(Math.random() * this.SIZE).toFixed(0))
   },
 
   createDomEl (item) {

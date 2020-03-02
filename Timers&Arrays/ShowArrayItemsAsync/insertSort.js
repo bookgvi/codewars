@@ -20,10 +20,10 @@ export function insertSortAsync (arr, cb) {
   const start = +new Date();
   const tmpArr = arr.concat();
   const resArr = [];
-  resArr.push(tmpArr.shift()); // Начинаем со второго элемента массива
+  resArr.push(tmpArr.pop()); // Начинаем с предпоследнего элемента массива
   setTimeout(function item () {
     if (tmpArr.length > 0) {
-      insertItem(tmpArr.shift(), resArr);
+      insertItem(tmpArr.pop(), resArr);
       setTimeout(item, timeOutDelay);
     } else {
       cb(resArr);

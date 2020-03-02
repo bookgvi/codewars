@@ -18,7 +18,7 @@ export function inserrtSort (arr) {
 }
 
 export function insertSortAsync (arr, cb) {
-  const timeOutDelay = 5;
+  const timeOutDelay = 25;
   const start = +new Date();
   const tmpArr = arr.concat();
   const resArr = [];

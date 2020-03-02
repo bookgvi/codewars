@@ -27,7 +27,7 @@ export function insertSortAsync (arr, cb) {
   setTimeout(function item () {
     if (tmpArr.length > 0) {
       insertItem(tmpArr.pop(), resArr);
-      reactiveObjProxy.progress = resArr.length / arr.length;
+      reactiveObjProxy.progress = (resArr.length / arr.length * 100).toFixed(0);
       setTimeout(item, timeOutDelay);
     } else {
       cb(resArr);

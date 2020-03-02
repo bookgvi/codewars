@@ -6,10 +6,7 @@ const reactiveObj = {
 
 export const reactiveObjProxy = new Proxy(reactiveObj, {
   set(target, key, val, receiver) {
-    val = (val * 100).toFixed(0);
-    if (target.el && val < 100) {
-      target.el.textContent = val;
-    } else if (target.el && val >= 100) {
+    if (val < 100 && val > 0) {
       target.el.textContent = val;
     }
     return Reflect.set(...arguments);

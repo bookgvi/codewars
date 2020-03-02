@@ -9,7 +9,7 @@ export function iterate (arr, handler, cb) {
     handler(tmpArr.shift());
     // }
     if (tmpArr.length > 0) {
-      reactiveObjProxy.progress = tmpArr.length / arr.length;
+      reactiveObjProxy.progress = (tmpArr.length / arr.length).toFixed(1) * 100;
       setTimeout(item, timeOutDelay);
     } else {
       cb();

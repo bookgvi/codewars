@@ -1,3 +1,5 @@
+import { reactiveObjProxy } from './reactive.js';
+
 export function inserrtSort (arr) {
   const tmpArr = arr.concat();
   let j = 0, saveI, temp;
@@ -21,9 +23,11 @@ export function insertSortAsync (arr, cb) {
   const tmpArr = arr.concat();
   const resArr = [];
   resArr.push(tmpArr.pop()); // Начинаем с предпоследнего элемента массива
+  reactiveObjProxy.decorator.style.display = 'block';
   setTimeout(function item () {
     if (tmpArr.length > 0) {
       insertItem(tmpArr.pop(), resArr);
+      reactiveObjProxy.progress = resArr.length / arr.length;
       setTimeout(item, timeOutDelay);
     } else {
       cb(resArr);

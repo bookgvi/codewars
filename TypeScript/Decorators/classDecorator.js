@@ -58,3 +58,4 @@ var Test = /** @class */ (function () {
 var test = new Test('QQQ');
 console.log(test.getTest);
 console.log(test.greetings);
+//# sourceMappingURL=classDecorator.js.map

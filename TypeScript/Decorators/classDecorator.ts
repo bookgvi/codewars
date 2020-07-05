@@ -1,10 +1,20 @@
-function changeConstructor<T extends { new (...args: any[]): {} }>(constructor: T) {
-    return class extends constructor {
-        private hello: string = 'Hey!!!';
+interface IProps {
+    [key: string]: any
+}
+
+interface IConstructor {
+    new(...args: any[]): IProps
+}
+
+function changeConstructor(props: IProps): Function {
+    return function <T extends IConstructor> (constructor: T): T {
+        return class extends constructor {
+            private props: IProps = props;
+        }
     }
 }
 
-@changeConstructor
+@changeConstructor({ val: 'QWE', greeting: 'Hey!!' })
 // @ts-ignore
 class Test {
     constructor(private test: string) {
@@ -16,7 +26,7 @@ class Test {
 
     public get greetings(): string {
         // @ts-ignore
-        return this.hello;
+        return this.props.greeting;
     }
 }
 

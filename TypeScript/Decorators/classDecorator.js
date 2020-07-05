@@ -17,16 +17,18 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-function changeConstructor(constructor) {
-    return /** @class */ (function (_super) {
-        __extends(class_1, _super);
-        function class_1() {
-            var _this = _super !== null && _super.apply(this, arguments) || this;
-            _this.hello = 'Hey!!!';
-            return _this;
-        }
-        return class_1;
-    }(constructor));
+function changeConstructor(props) {
+    return function (constructor) {
+        return /** @class */ (function (_super) {
+            __extends(class_1, _super);
+            function class_1() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.props = props;
+                return _this;
+            }
+            return class_1;
+        }(constructor));
+    };
 }
 var Test = /** @class */ (function () {
     function Test(test) {
@@ -42,13 +44,13 @@ var Test = /** @class */ (function () {
     Object.defineProperty(Test.prototype, "greetings", {
         get: function () {
             // @ts-ignore
-            return this.hello;
+            return this.props.greeting;
         },
         enumerable: true,
         configurable: true
     });
     Test = __decorate([
-        changeConstructor
+        changeConstructor({ val: 'QWE', greeting: 'Hey!!' })
         // @ts-ignore
     ], Test);
     return Test;

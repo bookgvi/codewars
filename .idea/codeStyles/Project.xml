@@ -4,6 +4,9 @@
       <option name="SPACES_WITHIN_OBJECT_LITERAL_BRACES" value="true" />
       <option name="SPACES_WITHIN_IMPORTS" value="true" />
     </JSCodeStyleSettings>
+    <TypeScriptCodeStyleSettings version="0">
+      <option name="SPACES_WITHIN_IMPORTS" value="true" />
+    </TypeScriptCodeStyleSettings>
     <codeStyleSettings language="JavaScript">
       <option name="SPACE_BEFORE_METHOD_PARENTHESES" value="true" />
       <indentOptions>
@@ -11,6 +14,9 @@
         <option name="CONTINUATION_INDENT_SIZE" value="2" />
         <option name="TAB_SIZE" value="2" />
       </indentOptions>
+    </codeStyleSettings>
+    <codeStyleSettings language="TypeScript">
+      <option name="SPACE_BEFORE_METHOD_PARENTHESES" value="true" />
     </codeStyleSettings>
   </code_scheme>
 </component>
